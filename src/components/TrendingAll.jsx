@@ -19,18 +19,19 @@ export default function TrendingAll() {
     }, []);
   
     return (
-      <div className="App">
+      <div>
         <h1>Trending topic</h1>
-        {movie && movie
-          .map(movie => {
-            return (
-              <div key={movie.id}>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-              </div>
-            )
-          })
-  
-        }
+        <div className="Gallery">
+            {movie && movie
+            .map(movie => {
+                return (
+                <div key={movie.id} className='itemGallery'>
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                </div>
+                )
+            })
+            }
+        </div>
       </div>
     );
 }
