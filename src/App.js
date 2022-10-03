@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
 import { API } from './shared/service/api';
@@ -9,22 +8,17 @@ function App() {
 
   useEffect(() => {
     
-            
-      axios
-      .get('https://api.themoviedb.org/4/list/1?api_key=8a0710661d3c2195ca561e0323dd91f5')
+      API
+      .get()
       .then((response) => {
-          console.log(response);
           setMovie(response.data.results)
       })
       .catch((error) => {
           console.error(error);
       });
       
-  
    
   }, []);
-
-  console.log(movie)
 
   return (
     <div className="App">
