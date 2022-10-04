@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { API } from '../shared/service/api';
-import Glider from "react-glider";
+// import Glider from "react-glider";
 import "glider-js/glider.min.css";
 
 
@@ -25,7 +25,7 @@ export default function TrendingAll() {
         <div>
             <h1>Trending topic</h1>
             <div className="gallery">
-                <Glider
+                {/* <Glider
                     slidesToShow={1}
                     // slidesToScroll={4}
                     scrollLock
@@ -44,7 +44,7 @@ export default function TrendingAll() {
                             },
                           }
                       ]}
-                >
+                > */}
                     {movie && movie
                         .map(movie => {
                             return (
@@ -54,7 +54,7 @@ export default function TrendingAll() {
                             )
                         })
                     }
-                </Glider>
+                {/* </Glider> */}
             </div>
         </div>
     );
