@@ -26,11 +26,24 @@ export default function TrendingAll() {
             <h1>Trending topic</h1>
             <div className="Gallery">
                 <Glider
-                    hasArrows
-                    slidesToShow={4}
-                    slidesToScroll={4}
+                    slidesToShow={1}
+                    // slidesToScroll={4}
                     scrollLock
-                    hasDots
+                    // rewind
+                    responsive={[
+                        {
+                          breakpoint: 650,
+                          settings: {
+                            slidesToShow: 3,
+                          },
+                        },
+                        {
+                            breakpoint: 864,
+                            settings: {
+                              slidesToShow: 5,
+                            },
+                          }
+                      ]}
                 >
                     {movie && movie
                         .map(movie => {
