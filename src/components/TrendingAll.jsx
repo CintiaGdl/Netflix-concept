@@ -24,7 +24,7 @@ export default function TrendingAll() {
     return (
         <div>
             <h1>Trending topic</h1>
-            <div className="Gallery">
+            <div className="gallery">
                 <Glider
                     slidesToShow={1}
                     // slidesToScroll={4}

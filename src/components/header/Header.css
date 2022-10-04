@@ -14,10 +14,11 @@
   align-items: center;
   padding: 0 60px;
 }
-button {
+a {
   background-color: transparent;
   color: #e5e5e5;
   border: none;
   font-family: 'Work Sans', sans-serif;
   padding: 1px 12px;
+  text-decoration: none;
 }

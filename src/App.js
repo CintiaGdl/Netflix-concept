@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/header/Header';
-import { NavLink, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import TrendingPage from './pages/TrendingPage';
 import TVShowPage from './pages/TVShowPage';
