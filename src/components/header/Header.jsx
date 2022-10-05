@@ -12,8 +12,9 @@ export default function Header() {
   const navigate = useNavigate();
 
   const inputSearch = (event) => {
+   
     if (event.key === 'Enter') {
-      setSearch(event.target.value)
+      setSearch(() => event.target.value)
       navigate('/search')
     }
     

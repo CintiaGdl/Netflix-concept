@@ -1,16 +1,30 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { ApiContext } from '../../shared/context/ApiContext';
+import { APIHeaders } from '../../shared/service/api';
+
+
+
 
 export default function Search() {
-
+    
     const {search} = useContext(ApiContext);
-
+    
     const [resultSearch, setresultSearch] = useState();
 
+
+    const apiKey = process.env.REACT_APP_apiKey;
+
+    
+    const API_search = axios.create({
+        baseURL: `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${search}`,
+        timeout: 6000,
+        headers: APIHeaders
+    })
+
     useEffect(() => {
-        axios
-        .get(`https://api.themoviedb.org/3/search/multi?api_key=8a0710661d3c2195ca561e0323dd91f5&language=en-US&query=${search}`)
+        API_search
+        .get()
         .then((response) => {
             
             setresultSearch(response.data.results)

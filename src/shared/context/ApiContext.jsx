@@ -8,6 +8,8 @@ export const ApiProvider = ({children}) => {
     const [trendingAll, setTrendingAll] = useState([]);
     const [trendingMovies, setTrendingMovie] = useState([]);
     const [trendingTVShow, setTrendingTVShow] = useState([]);
+
+    const [search, setSearch] = useState();
     
     useEffect(() => {
         API_trending_all
@@ -47,7 +49,7 @@ export const ApiProvider = ({children}) => {
     }, []);
     
     return (
-        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow}}>
+        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow, setSearch, search}}>
             {children}
         </ApiContext.Provider>
     )
