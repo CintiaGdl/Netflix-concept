@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { API } from '../shared/service/api';
+import React, { useContext } from 'react'
 // import Glider from "react-glider";
 import "glider-js/glider.min.css";
+import { ApiContext } from '../shared/context/ApiContext';
 
 
 export default function TrendingAll() {
-    const [movie, setMovie] = useState([]);
-
-    useEffect(() => {
-
-        API
-            .get()
-            .then((response) => {
-                setMovie(response.data.results)
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-
-
-    }, []);
+    
+    const {trendingAll} = useContext(ApiContext);
 
     return (
         <div>
@@ -45,11 +32,11 @@ export default function TrendingAll() {
                           }
                       ]}
                 > */}
-                    {movie && movie
-                        .map(movie => {
+                    {trendingAll && trendingAll
+                        .map(oneMovieTVShow => {
                             return (
-                                <div key={movie.id} className='itemGallery'>
-                                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                                <div key={oneMovieTVShow.id} className='itemGallery'>
+                                    <img src={`https://image.tmdb.org/t/p/w500${oneMovieTVShow.poster_path}`} alt={oneMovieTVShow.title} />
                                 </div>
                             )
                         })

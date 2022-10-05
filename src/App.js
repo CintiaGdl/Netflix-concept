@@ -6,22 +6,32 @@ import TrendingPage from './pages/TrendingPage';
 import TVShowPage from './pages/TVShowPage';
 import MoviesPage from './pages/MoviesPage';
 import MyListPage from './pages/MyListPage';
+import { ApiProvider } from './shared/context/ApiContext';
 
 
 function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/TVShow' element={<TVShowPage />} />
-          <Route path='/movies' element={<MoviesPage />} />
-          <Route path='/trending' element={<TrendingPage />} />
-          <Route path='/myList' element={<MyListPage />} />
-        </Routes>
-      </Router>
+      <ApiProvider>
+
+        <Router>
+
+          <Header />
+
+          <Routes>
+
+            <Route path='/' element={<HomePage />} />
+            <Route path='/TVShow' element={<TVShowPage />} />
+            <Route path='/movies' element={<MoviesPage />} />
+            <Route path='/trending' element={<TrendingPage />} />
+            <Route path='/myList' element={<MyListPage />} />
+
+          </Routes>
+
+        </Router>
+        
+      </ApiProvider>
     </div>
   );
 }
