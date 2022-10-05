@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Header.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ApiContext } from '../../shared/context/ApiContext';
 
 
 export default function Header() {
+
+
+  const {setSearch} = useContext(ApiContext);
+
+  const navigate = useNavigate();
+
+  const inputSearch = (event) => {
+    if (event.key === 'Enter') {
+      setSearch(event.target.value)
+      navigate('/search')
+    }
+    
+  }
+
   return (
     <div className='navBar'>
         <div className="navBarLeft">
@@ -17,7 +32,7 @@ export default function Header() {
             <NavLink to='myList'>My list</NavLink>
         </div>
         <div className="navBarRight">
-            <button>Search</button>
+            <input type='text' onKeyDown={inputSearch}></input>
             <button>Notification</button>
             <button>Profile</button>
         </div>
