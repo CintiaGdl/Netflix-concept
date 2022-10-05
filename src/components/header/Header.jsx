@@ -14,10 +14,14 @@ export default function Header() {
   const inputSearch = (event) => {
    
     if (event.key === 'Enter') {
-      setSearch(() => event.target.value)
-      navigate('/search')
+      if (event.target.value === '') {
+        alert('Please you need to write something to search')
+      } else {
+        setSearch(() => event.target.value)
+        navigate('/search')
+        event.target.value = ''
+      }
     }
-    
   }
 
   return (
@@ -33,7 +37,7 @@ export default function Header() {
             <NavLink to='myList'>My list</NavLink>
         </div>
         <div className="navBarRight">
-            <input type='text' onKeyDown={inputSearch}></input>
+            <input type='text' onKeyDown={inputSearch} placeholder='Search...'></input>
             <button>Notification</button>
             <button>Profile</button>
         </div>
