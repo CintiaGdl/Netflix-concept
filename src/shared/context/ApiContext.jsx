@@ -49,7 +49,7 @@ export const ApiProvider = ({children}) => {
     }, []);
     
     return (
-        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow, setSearch, search}}>
+        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow, setSearch, search, setTrendingTVShow}}>
             {children}
         </ApiContext.Provider>
     )

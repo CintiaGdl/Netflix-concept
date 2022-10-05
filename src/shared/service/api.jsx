@@ -27,7 +27,7 @@ export const API_trending_movies = axios.create({
 });
 
 export const API_trending_tvshow = axios.create({
-    baseURL: `${urlsTrending.movies}`,
+    baseURL: `${urlsTrending.tvshow}`,
     timeout: 6000,
     headers: APIHeaders
 });
