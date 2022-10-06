@@ -1,5 +1,5 @@
 import React from 'react'
-import TrendingAll from '../components/TrendingAll'
+import TrendingAll from '../components/trending/TrendingAll'
 
 export default function HomePage() {
   return (

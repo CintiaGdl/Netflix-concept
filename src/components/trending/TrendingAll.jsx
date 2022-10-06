@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 // import Glider from "react-glider";
 import "glider-js/glider.min.css";
-import { ApiContext } from '../shared/context/ApiContext';
+import { ApiContext } from '../../shared/context/ApiContext';
 
 
 export default function TrendingAll() {

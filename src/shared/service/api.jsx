@@ -32,3 +32,9 @@ export const API_trending_tvshow = axios.create({
     headers: APIHeaders
 });
 
+export const API_tvshow_popular = axios.create({
+    baseURL: `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`,
+    timeout: 6000,
+    headers: APIHeaders
+});
+
