@@ -43,3 +43,4 @@ export const API_movies_popular = axios.create({
     timeout: 6000,
     headers: APIHeaders
 });
+

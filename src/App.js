@@ -8,6 +8,7 @@ import MoviesPage from './pages/MoviesPage';
 import MyListPage from './pages/MyListPage';
 import { ApiProvider } from './shared/context/ApiContext';
 import SearchPage from './pages/SearchPage';
+import PlayPage from './pages/PlayPage';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path='/trending' element={<TrendingPage />} />
             <Route path='/myList' element={<MyListPage />} />
             <Route path='/search' element={<SearchPage />} />
+            <Route path='/play' element={<PlayPage />} />
 
           </Routes>
 
