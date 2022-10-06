@@ -1,7 +1,12 @@
 import React from 'react'
+import Movies from '../components/movies/Movies'
+import TrendingMovies from '../components/trending/TrendingMovies'
 
 export default function MoviesPage() {
   return (
-    <div>MoviesPage</div>
+    <div>
+      <TrendingMovies />
+      <Movies />
+    </div>
   )
 }
