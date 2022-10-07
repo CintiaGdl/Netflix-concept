@@ -6,3 +6,18 @@
   height: 210px;
   object-fit: contain;
 }
+
+.glider-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  
+}
+
+.glider-contain {
+  width: 75% !important;
+}
+
+.glider-next, .glider-prev {
+  color: red !important;
+}

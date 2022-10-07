@@ -27,7 +27,7 @@ export default function Play() {
         .catch((error) => {
             console.error(error);
         })
-    }, []);
+    }, );
 
   return (
     <div>
