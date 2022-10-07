@@ -38,7 +38,7 @@ export default function Play() {
                   .map(oneResult => {
                       return (
                           <div key={oneResult.id} className='itemGalleryVideo'>
-                            <ReactPlayer url={`https://www.youtube.com/embed/${oneResult.key}`} />
+                            <ReactPlayer url={`https://www.youtube.com/embed/${oneResult.key}`} className='react-player'/>
                           </div>
                       )
                   })

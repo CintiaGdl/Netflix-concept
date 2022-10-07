@@ -34,10 +34,16 @@
   margin: 2%;
 }
 
-.itemGalleryVideo video {
-  /* @media (min-width: 768px) { */
-    width: 300px !important;
-    height: auto !important;
-    object-fit: contain !important;
-  /* } */
+@media (max-width: 768px) {
+  .itemGalleryVideo >div {
+      width: 400px !important;
+      height: 210px !important;
+      object-fit: contain !important;
+      margin-top: 4%;
+      /* position: relative; */
+      margin: 3%;
+  }
+  .galleryVideo {
+    margin-left: 35%;
+  }
 }
