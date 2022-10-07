@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { ApiContext } from '../../shared/context/ApiContext';
 import { APIHeaders, apiKey } from '../../shared/service/api';
+import ReactPlayer from 'react-player'
 
 export default function Play() {
 
@@ -29,14 +30,15 @@ export default function Play() {
         })
     }, );
 
+
   return (
     <div>
-        <div className="gallery">
+        <div className="galleryVideo">
               {results && results
                   .map(oneResult => {
                       return (
-                          <div key={oneResult.id} className='itemGallery'>
-                            <h1>{oneResult.name}</h1>
+                          <div key={oneResult.id} className='itemGalleryVideo'>
+                            <ReactPlayer url={`https://www.youtube.com/embed/${oneResult.key}`} />
                           </div>
                       )
                   })
