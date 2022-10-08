@@ -33,8 +33,10 @@ export default function Search() {
 
 
     return (
-        <div>
-            <h1>Search</h1>
+        <div className='pageComponent'>
+            <div className="titleComponent">
+                <h1>Results for search... {search}</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows
