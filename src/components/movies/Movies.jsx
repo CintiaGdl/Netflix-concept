@@ -24,7 +24,21 @@ export default function Movies() {
                     scrollLock
                     responsive={[
                         {
-                            breakpoint: 864,
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 900,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 4
+                            }
+                        },
+                        {
+                            breakpoint: 1000,
                             settings: {
                                 slidesToShow: 5,
                                 slidesToScroll: 5
