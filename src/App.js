@@ -9,6 +9,7 @@ import MyListPage from './pages/MyListPage';
 import { ApiProvider } from './shared/context/ApiContext';
 import SearchPage from './pages/SearchPage';
 import PlayPage from './pages/PlayPage';
+import HamburguerMenu from './shared/component/menu/HamburguerMenu';
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
             <Route path='/myList' element={<MyListPage />} />
             <Route path='/search' element={<SearchPage />} />
             <Route path='/play' element={<PlayPage />} />
+            
+            <Route path='/menu' element={<HamburguerMenu />} />
 
           </Routes>
 

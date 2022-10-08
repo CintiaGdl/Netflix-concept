@@ -6,3 +6,4 @@ npm i react-glider --legacy-peer-deps
 npm i react-router-dom
 el .env por fallo libreria glider
 npm install react-player
+npm install react-burger-menu --save

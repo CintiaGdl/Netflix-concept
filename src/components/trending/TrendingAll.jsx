@@ -9,8 +9,10 @@ export default function TrendingAll() {
     const {trendingAll} = useContext(ApiContext);
 
     return (
-        <div>
+        <div className='pageComponent'>
+            <div className="titleComponent">
             <h1>Trending topic</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows
