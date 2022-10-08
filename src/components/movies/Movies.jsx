@@ -20,13 +20,14 @@ export default function Movies() {
                     hasArrows
                     draggable
                     slidesToShow={2}
-                    slidesToScroll={4}
+                    slidesToScroll={2}
                     scrollLock
                     responsive={[
                         {
                             breakpoint: 864,
                             settings: {
                                 slidesToShow: 5,
+                                slidesToScroll: 5
                             }
                         }
                     ]}

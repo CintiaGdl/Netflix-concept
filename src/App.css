@@ -15,7 +15,7 @@
 }
 
 .glider-contain {
-  width: 75% !important;
+  width: 90% !important;
 }
 
 .glider-next, .glider-prev {
@@ -42,8 +42,5 @@
       margin-top: 4%;
       /* position: relative; */
       margin: 3%;
-  }
-  .galleryVideo {
-    margin-left: 35%;
   }
 }
