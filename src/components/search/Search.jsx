@@ -4,11 +4,17 @@ import { ApiContext } from '../../shared/context/ApiContext';
 import { APIHeaders, apiKey } from '../../shared/service/api';
 import Glider from "react-glider";
 import "glider-js/glider.css";
+import { NavLink } from 'react-router-dom';
 
 
 export default function Search() {
 
-    const { search } = useContext(ApiContext);
+    const { search, setId, setType } = useContext(ApiContext);
+
+    const onClick = (id,type) => {
+        setId(id);
+        setType(type);
+    };
 
     const [resultSearch, setresultSearch] = useState();
 
@@ -71,9 +77,11 @@ export default function Search() {
                     {resultSearch && resultSearch
                         .map(oneResult => {
                             return (
-                                <div key={oneResult.id} className='itemGallery'>
-                                    <img src={`https://image.tmdb.org/t/p/w500${oneResult.poster_path}`} alt={oneResult.title} />
-                                </div>
+                                <NavLink to='/play' onClick={() => onClick(oneResult.id, oneResult.media_type)}>
+                                    <div key={oneResult.id} className='itemGallery'>
+                                        <img src={`https://image.tmdb.org/t/p/w500${oneResult.poster_path}`} alt={oneResult.title} />
+                                    </div>
+                                </NavLink>
                             )
                         })
                     }

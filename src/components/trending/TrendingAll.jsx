@@ -2,16 +2,22 @@ import React, { useContext } from 'react'
 import Glider from "react-glider";
 import "glider-js/glider.css";
 import { ApiContext } from '../../shared/context/ApiContext';
+import { NavLink } from 'react-router-dom';
 
 
 export default function TrendingAll() {
-    
-    const {trendingAll} = useContext(ApiContext);
+
+    const { trendingAll, setType, setId } = useContext(ApiContext);
+
+    const onClick = (id, type) => {
+        setId(id);
+        setType(type);
+    };
 
     return (
         <div className='pageComponent'>
             <div className="titleComponent">
-            <h1>Trending topic</h1>
+                <h1>Trending topic</h1>
             </div>
             <div className="gallery">
                 <Glider
@@ -47,9 +53,11 @@ export default function TrendingAll() {
                     {trendingAll && trendingAll
                         .map(oneMovieTVShow => {
                             return (
-                                <div key={oneMovieTVShow.id} className='itemGallery'>
-                                    <img src={`https://image.tmdb.org/t/p/w500${oneMovieTVShow.poster_path}`} alt={oneMovieTVShow.title} />
-                                </div>
+                                <NavLink to='/play' onClick={() => onClick(oneMovieTVShow.id, oneMovieTVShow.media_type)}>
+                                    <div key={oneMovieTVShow.id} className='itemGallery'>
+                                        <img src={`https://image.tmdb.org/t/p/w500${oneMovieTVShow.poster_path}`} alt={oneMovieTVShow.title} />
+                                    </div>
+                                </NavLink>
                             )
                         })
                     }

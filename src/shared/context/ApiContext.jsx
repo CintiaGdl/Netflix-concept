@@ -14,6 +14,7 @@ export const ApiProvider = ({children}) => {
     const [search, setSearch] = useState();
 
     const [id, setId] = useState();
+    const [type, setType] = useState();
     
     useEffect(() => {
         API_trending_all
@@ -74,7 +75,7 @@ export const ApiProvider = ({children}) => {
     }, []);
     
     return (
-        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow, setSearch, search, tvShow_popular, movies_popular, setId, id}}>
+        <ApiContext.Provider value={{trendingAll, trendingMovies, trendingTVShow, setSearch, search, tvShow_popular, movies_popular, setId, id, setType, type}}>
             {children}
         </ApiContext.Provider>
     )

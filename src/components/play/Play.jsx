@@ -6,16 +6,17 @@ import ReactPlayer from 'react-player'
 
 export default function Play() {
 
-    const {id} = useContext(ApiContext);
+    const {id, type} = useContext(ApiContext);
 
     const [results, setresult] = useState();
 
 
      const API_videos_id = axios.create({
-        baseURL: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`,
+        baseURL: `https://api.themoviedb.org/3/${type}/${id}/videos?api_key=${apiKey}&language=en-US`,
         timeout: 6000,
         headers: APIHeaders
     });
+     
 
     useEffect(() => {
         API_videos_id

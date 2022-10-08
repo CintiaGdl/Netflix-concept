@@ -2,10 +2,16 @@ import React, { useContext } from 'react'
 import { ApiContext } from '../../shared/context/ApiContext';
 import Glider from "react-glider";
 import "glider-js/glider.css";
+import { NavLink } from 'react-router-dom';
 
 export default function TvShow() {
 
-    const { tvShow_popular } = useContext(ApiContext);
+    const { tvShow_popular, setId, setType } = useContext(ApiContext);
+
+    const onClick = (id, type) => {
+        setId(id);
+        setType(type);
+    };
 
     return (
         <div className='pageComponent'>
@@ -46,9 +52,11 @@ export default function TvShow() {
                     {tvShow_popular && tvShow_popular
                         .map(tvShow => {
                             return (
-                                <div key={tvShow.id} className='itemGallery'>
-                                    <img src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`} alt={tvShow.title} />
-                                </div>
+                                <NavLink to='/play' onClick={() => onClick(tvShow.id, 'tv')}>
+                                    <div key={tvShow.id} className='itemGallery'>
+                                        <img src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`} alt={tvShow.title} />
+                                    </div>
+                                </NavLink>
                             )
                         })
                     }
