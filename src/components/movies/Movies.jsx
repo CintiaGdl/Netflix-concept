@@ -13,8 +13,10 @@ export default function Movies() {
     };
 
     return (
-        <div>
-            <h1>Popular movies</h1>
+        <div className='pageComponent'>
+            <div className="titleComponent">
+                <h1>Popular movies</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows

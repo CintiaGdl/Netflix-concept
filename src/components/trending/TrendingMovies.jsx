@@ -2,14 +2,21 @@ import React, { useContext } from 'react'
 import { ApiContext } from '../../shared/context/ApiContext'
 import Glider from "react-glider";
 import "glider-js/glider.css";
+import { NavLink } from 'react-router-dom';
 
 export default function TrendingMovies() {
 
-    const { trendingMovies } = useContext(ApiContext);
+    const { trendingMovies, setId } = useContext(ApiContext);
+
+    const onClick = (id) => {
+        setId(id);
+    };
 
     return (
-        <div>
-            <h1>Trending movies</h1>
+        <div className='pageComponent'>
+            <div className="titleComponent">
+                <h1>Trending movies</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows
@@ -44,9 +51,11 @@ export default function TrendingMovies() {
                     {trendingMovies && trendingMovies
                         .map(movie => {
                             return (
-                                <div key={movie.id} className='itemGallery'>
-                                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                                </div>
+                                <NavLink to='/play' onClick={() => onClick(movie.id)}>
+                                    <div key={movie.id} className='itemGallery'>
+                                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                                    </div>
+                                </NavLink>
                             )
                         })
                     }

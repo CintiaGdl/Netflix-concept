@@ -8,8 +8,10 @@ export default function TvShow() {
     const { tvShow_popular } = useContext(ApiContext);
 
     return (
-        <div>
-            <h1>Popular TV Show</h1>
+        <div className='pageComponent'>
+            <div className="titleComponent">
+                <h1>Popular TV Show</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows

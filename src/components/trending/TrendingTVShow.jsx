@@ -9,8 +9,10 @@ export default function TrendingTVShow() {
 
 
     return (
-        <div>
-            <h1>Trending TV Show</h1>
+        <div className='pageComponent'>
+            <div className="titleComponent">
+                <h1>Trending TV Show</h1>
+            </div>
             <div className="gallery">
                 <Glider
                     hasArrows

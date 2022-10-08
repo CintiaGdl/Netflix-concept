@@ -48,7 +48,9 @@
 .pageComponent {
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
 }
 .titleComponent {
   margin-left: 80px;
+  padding-bottom: 15px;
 }
