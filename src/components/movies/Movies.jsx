@@ -6,10 +6,11 @@ import "glider-js/glider.css";
 
 export default function Movies() {
 
-    const { movies_popular, setId } = useContext(ApiContext);
+    const { movies_popular, setId, setType } = useContext(ApiContext);
 
-    const onClick = (id) => {
+    const onClick = (id, type) => {
         setId(id);
+        setType(type);
     };
 
     return (
@@ -51,7 +52,7 @@ export default function Movies() {
                     {movies_popular && movies_popular
                         .map(movie => {
                             return (
-                                <NavLink to='/play' onClick={() => onClick(movie.id)}>
+                                <NavLink to='/play' onClick={() => onClick(movie.id, 'movie')}>
                                     <div key={movie.id} className='itemGallery'>
                                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                                     </div>
