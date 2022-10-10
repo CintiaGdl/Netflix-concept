@@ -1,25 +1,19 @@
-# Getting Started with Create React App
+# NETFLIX JARAXA
+A movie directory with a Netflix style.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Displaying movies and tv show from the [movie database API](https://developers.themoviedb.org/)
 
-## Available Scripts
+## Installation and running the application 🚀
 
-In the project directory, you can run:
+Based on the [create react app](https://create-react-app.dev/) to install the node modules and get the application started run this command
 
-### `npm start`
+    npm i && npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Will start the default local server, to access the page on the browser visit http://localhost:3000/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Building the application 📦
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+    npm run build
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,42 +23,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Features 👩‍💻
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The navigation bar gives access to the different sections with a slider with the poster.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clicking on the poster to see all available trailers from youtube.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Search bar to look for a tv shows or movies.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Responsive view featuring a burger menu clicking on the logo.
 
-## Learn More
+## Libraries 📚
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Axios](https://axios-http.com/docs/intro) because is a library we can use for client and server side.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Glider](https://github.com/kevinfarrugia/react-glider) implementing a slider could be time consuming and costumization wasn't a requirement.
 
-### Code Splitting
+    - Sourcemap, glider throws a warning in development environment so I have to disable sourcemap in [.env](.env)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [React-router-dom](https://v5.reactrouter.com/web/guides/quick-start) for page routing.
 
-### Analyzing the Bundle Size
+- [React-player](https://github.com/CookPete/react-player) to display youtube videos for the trailers 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [React-burger-menu](https://github.com/negomi/react-burger-menu) to create a burger menu for responsive view
 
-### Making a Progressive Web App
+## Improvements, todos, next iterations 🤓
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Home page show another slider with with suggested movies for the user using the endpoints available from API (get recommendations, get similar movies).
 
-### Advanced Configuration
+- Modal to display more information about the movies. With the requests we are getting rich information about each movie (overview, genre, rating,..) we could render it in a pop up.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- My list page to save your favorite movies and
+show related content with these, using the the [API](https://developers.themoviedb.org/4/list/create-list)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Profile with user information as proof of concept using a local storage instead create a database.
