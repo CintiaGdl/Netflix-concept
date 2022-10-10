@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/Netflix-concept/static/css/main.0636add4.css",
+    "main.js": "/Netflix-concept/static/js/main.1e4e7e74.js",
+    "index.html": "/Netflix-concept/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.0636add4.css",
+    "static/js/main.1e4e7e74.js"
+  ]
+}
