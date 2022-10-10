@@ -35,7 +35,7 @@ export default function Search() {
             .catch((error) => {
                 console.error(error);
             })
-    }, [search]);
+    }, [API_search, search]);
 
 
     return (
